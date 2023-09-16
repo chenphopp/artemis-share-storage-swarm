@@ -1,0 +1,61 @@
+version: "3.9"
+###############################################
+networks:
+  backend:
+###############################################
+services:
+   haproxy:
+    image: 
+    hostname: tms-artemis
+    ports:
+      - "9006:9000"
+      - "5672:5672"
+      - "61616:61616"
+      - "61613:61613"
+      - "5445:5445"
+      - "1883:1883"
+      - "8161:8161"
+    volumes:
+      - ./haproxy:/usr/local/etc/haproxy:ro
+    networks:
+      - backend
+##############################################
+   artemis1:
+    image: 
+    hostname: artemis1
+    ports:
+      - "61617:61616"
+      - "61614:61613"
+      - "5673:5672"
+      - "5446:5445"
+      - "1884:1883"
+      - "8162:8161"
+    environment:
+      ARTEMIS_USER: guest
+      ARTEMIS_PASSWORD: guest
+      ANONYMOUS_LOGIN: 'true'
+    volumes:
+       - ./master/artemis-instance:/var/lib/artemis-instance
+    networks:
+      - backend
+###############################################
+   artemis2:
+    image: 192.168.50.50:4000/witwickey/artemis-centos:2.28.0
+    hostname: artemis2
+    ports:
+      - "61618:61616"
+      - "61615:61613"
+      - "5674:5672"
+      - "5447:5445"
+      - "1885:1883"
+      - "8163:8161"
+    environment:
+      ARTEMIS_USER: guest
+      ARTEMIS_PASSWORD: guest
+      ANONYMOUS_LOGIN: 'true'
+    volumes:
+       - ./slave/artemis-instance:/var/lib/artemis-instance
+       - ./master/artemis-instance/data:/var/lib/artemis-instance/data
+    networks:
+      - backend
+###############################################
