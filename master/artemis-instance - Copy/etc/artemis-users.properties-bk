@@ -1,0 +1,18 @@
+## ---------------------------------------------------------------------------
+## Licensed to the Apache Software Foundation (ASF) under one or more
+## contributor license agreements.  See the NOTICE file distributed with
+## this work for additional information regarding copyright ownership.
+## The ASF licenses this file to You under the Apache License, Version 2.0
+## (the "License"); you may not use this file except in compliance with
+## the License.  You may obtain a copy of the License at
+##
+## http://www.apache.org/licenses/LICENSE-2.0
+##
+## Unless required by applicable law or agreed to in writing, software
+## distributed under the License is distributed on an "AS IS" BASIS,
+## WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+## See the License for the specific language governing permissions and
+## limitations under the License.
+## ---------------------------------------------------------------------------
+
+admin = ENC(1024:7CAB2047225496BAE50727B86CE8E2561022A8D6D1938E3AE1419B805269C8BC:7A8318D585F29A00D223E2CF1FDC4FC5E8B14CE12821D90BDF299A87C9B7298935A9E040214959C0CB34BBDCCCEADCCEB7721120CFB49F74841CD91778CC2E58)
